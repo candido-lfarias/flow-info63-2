@@ -1,12 +1,21 @@
 const express = require('express');
 const app = express();
+const fs = require('fs');
 const port = 3000;
 app.use(express.json());
 
 
 
-app.get('/api/version', (req, res) => {
-  res.json({ version: '1.0.0' });
+app.get('/api/andre-gschuh', (req, res) => {
+
+  fs.readFile('./arquivo.txt', 'utf-8', (err, data) => {
+    if(err){
+      return res.status(500).json({error: "Erro ao ler o arquivo"})
+    }
+
+    res.json({conteudo: data});
+  });
+
 });
 
 
