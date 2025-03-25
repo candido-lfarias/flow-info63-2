@@ -1,4 +1,4 @@
 {
-   nome: "isadora", 
-   turma: "info 63 2"    
+   nome: 'isadora', 
+   turma: 'info 63 2'    
 }
