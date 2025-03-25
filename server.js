@@ -9,9 +9,9 @@ app.get('/api/version', (req, res) => {
   res.json({ version: '1.0.0' });
 });
 
-app.get('/api/vinicius-6569395', (req, res) => {
+app.get('/api/vinicius-6569395', async (req, res) => {
   const fs = require('fs');
-  const arquivo = fs.readFile('vinicius-6569395.txt')
+  const arquivo = fs.readFile('vinicius-6569395.txt', 'utf8')
     res.json(arquivo);
   });
 
