@@ -8,8 +8,16 @@ const port = 3000;
 
 app.use(express.json());
 
+
 app.get('/api/version', (req, res) => {
   res.json({ version: '1.0.0' });
+});
+
+
+app.get('/api/isadora-gularte', async (req, res) => {
+  const fs = require('fs') .promisses
+  const arquivo = await fs.readFile('isadora-gularte.txt', 'utf8');
+  res.json(arquivo)
 });
 
 app.get('/api/valentina', async (req, res) => {
@@ -78,7 +86,6 @@ app.get('/api/vinicius-6569395', async (req, res) => {
 
   res.json(JSON.parse(data));
 })
-
 
 
 app.listen(port, () => {
