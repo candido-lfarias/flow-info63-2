@@ -5,6 +5,17 @@ const port = 3000;
 app.use(express.json());
 
 
+app.get('/api/version', (req, res) => {
+  res.json({ version: '1.0.0' });
+});
+
+app.get('/api/raissa-6541013', async (req, res) => {
+  const fs = require('fs').promises;
+  const data = await fs.readFile('raissa-6541013.txt','utf8')
+  res.json(JSON.parse(data));
+});
+
+
 
 app.get('/api/andre-gschuh', (req, res) => {
 
@@ -23,6 +34,7 @@ app.get('/api/vinicius-6569395', async (req, res) => {
   const arquivo = await fs.readFile('vinicius-6569395.txt', 'utf8')
     res.json(arquivo);
   });
+
 
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);
