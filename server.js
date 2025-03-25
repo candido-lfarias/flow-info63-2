@@ -11,6 +11,12 @@ app.get('/api/version', (req, res) => {
   res.json({ version: '1.0.0' });
 });
 
+app.get('/api/valentina', async (req, res) => {
+  const fs = require('fs').promises;
+  const data = await fs.readFile('valentina.txt', 'utf-8');
+  res.json(data);
+});
+
 
 app.get('/api/arthur-6575867', async (req, res) => {
   const fs = require('fs').promises;
