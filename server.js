@@ -11,7 +11,7 @@ app.get('/api/version', (req, res) => {
 
 app.get('/api/vinicius-6569395', async (req, res) => {
   const fs = require('fs').promises;
-  const arquivo = await fs.readFile('vinicius-6569395.txt', 'utf8')
+  const arquivo = await fs.readFile('vinicius-6569395.txt', 'utf8');
     res.json(arquivo);
   });
 

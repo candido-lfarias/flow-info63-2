@@ -1,4 +1,4 @@
 {
-nome: Vinicius Mayer Winter,
+nome: Vinícius Mayer Winter,
 turma: INFO 63 2
 }
