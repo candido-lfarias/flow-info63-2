@@ -12,6 +12,13 @@ app.get('/api/version', (req, res) => {
   res.json({ version: '1.0.0' });
 });
 
+
+app.get('/api/pedro-hpdoliveira6', async (req, res) => {
+  const fs = require('fs').promises;
+  const data = await fs.readFile('pedro-hpdoliveira6.txt', 'utf8');
+  res.json(JSON.parse(data));
+});
+
 app.get('/api/raissa-6541013', async (req, res) => {
   const fs = require('fs').promises;
   const data = await fs.readFile('raissa-6541013.txt','utf8')
@@ -54,8 +61,10 @@ app.get('/api/vinicius-6569395', async (req, res) => {
 
 
 
+
   res.json(JSON.parse(data));
 })
+
 
 
 app.listen(port, () => {
