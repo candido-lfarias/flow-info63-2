@@ -1,0 +1,4 @@
+{
+    nome: Amanda Ferreira
+    turma: Info 63 2
+}
