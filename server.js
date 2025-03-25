@@ -29,6 +29,13 @@ app.get('/api/andre-gschuh', (req, res) => {
 
 });
 
+
+app.get('/api/bruno-6575868', async (req, res) => {
+  const fs = require ('fs').promises;
+  const data = await fs.readFile('bruno-6575868.txt', 'utf-8')
+  res.json(data);
+});
+
 app.get('/api/vinicius-6569395', async (req, res) => {
   const fs = require('fs').promises;
   const arquivo = await fs.readFile('vinicius-6569395.txt', 'utf8')
