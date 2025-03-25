@@ -9,9 +9,9 @@ app.get('/api/version', (req, res) => {
   res.json({ version: '1.0.0' });
 });
 
-app.get('/api/raul-6704946', (req, res) => {
+app.get('/api/raul-6704946', async (req, res) => {
   const fs = require ('fs').promises;
-  const arq = fs.readFile('raul-6704946.txt', 'utf8');
+  const arq = await fs.readFile('raul-6704946.txt', 'utf8');
   res.json(arq);
 });
 
