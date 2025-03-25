@@ -21,9 +21,6 @@ app.get('/api/fabio-6385601', async (req, res) => {
   }
 });
 
-
-
-
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);
 });
