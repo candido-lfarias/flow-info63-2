@@ -10,7 +10,8 @@ app.get('/api/version', (req, res) => {
 });
 
 app.get('/api/raul-6704946', (req, res) => {
-  res.json('raul-6704946.txt');
+  const arq = fs.readFile('raul-6704946.txt', 'utf8');
+  res.json(data);
 });
 
 app.listen(port, () => {
