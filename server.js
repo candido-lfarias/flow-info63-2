@@ -1,4 +1,6 @@
 const express = require('express');
+const fs = require('fs');
+const path = require('path');
 const app = express();
 const fs = require('fs');
 const port = 3000;
@@ -9,12 +11,20 @@ app.get('/api/version', (req, res) => {
   res.json({ version: '1.0.0' });
 });
 
+
 app.get('/api/arthur-6575867', async (req, res) => {
   const fs = require('fs').promises;
   const arquivo = await fs.readFile('arthur-6575867.txt', 'utf8')
   res.json(arquivo);
   });
   
+
+
+app.get('/api/pedro-hpdoliveira6', async (req, res) => {
+  const fs = require('fs').promises;
+  const data = await fs.readFile('pedro-hpdoliveira6.txt', 'utf8');
+  res.json(JSON.parse(data));
+});
 
 app.get('/api/raissa-6541013', async (req, res) => {
   const fs = require('fs').promises;
@@ -48,6 +58,7 @@ app.get('/api/vinicius-6569395', async (req, res) => {
   const arquivo = await fs.readFile('vinicius-6569395.txt', 'utf8')
     res.json(arquivo);
   });
+
 
 
 app.listen(port, () => {
