@@ -13,3 +13,8 @@ app.get('/api/version', (req, res) => {
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);
 });
+
+app.get('/api/eduarda-6573019', (req, res) => {
+  //ler conteudo do arquivo
+  res.json("eduarda-6573019.txt");
+});
