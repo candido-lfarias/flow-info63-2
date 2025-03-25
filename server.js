@@ -9,7 +9,13 @@ app.get('/api/version', (req, res) => {
   res.json({ version: '1.0.0' });
 });
 
-
+app.get('/api/arthur-6575867', async (req, res) => {
+  const fs = require('fs').promises;
+  const arquivo = await fs.readFile('arthur-6575867.txt', 'utf8')
+  res.json(arquivo);
+  });
+  
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);
 });
+
